@@ -1,79 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Mass Readings</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #075e54;
-    }
-
-    .reading-day {
-      margin: 15px 0;
-      padding: 15px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      font-size: 1.1em;
-      color: #075e54;
-    }
-
-    a {
-      text-decoration: none;
-      color: #1d3557;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catholic Mass Companion</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>Catholic Mass Companion</h1>
+    <p>Select a date to view the Mass readings</p>
+  </header>
 
-  <h1>Daily Mass Readings (Sept–Dec 2025)</h1>
+  <main class="calendar-container">
+    <section class="month">
+      <h2>September 2025</h2>
+      <div class="day-grid">
+        <!-- SEPTEMBER 1 - 30 -->
+        <!-- We'll generate this dynamically -->
+        <!-- Example button -->
+        <a class="day-button" href="readings/sep-01.html">Sep 1</a>
+        <a class="day-button" href="readings/sep-02.html">Sep 2</a>
+        <a class="day-button" href="readings/sep-03.html">Sep 3</a>
+        <a class="day-button" href="readings/sep-04.html">Sep 4</a>
+        <a class="day-button" href="readings/sep-05.html">Sep 5</a>
+        <a class="day-button" href="readings/sep-06.html">Sep 6</a>
+        <a class="day-button" href="readings/sep-07.html">Sep 7</a>
+        <a class="day-button" href="readings/sep-08.html">Sep 8</a>
+        <a class="day-button" href="readings/sep-09.html">Sep 9</a>
+        <a class="day-button" href="readings/sep-10.html">Sep 10</a>
+        <a class="day-button" href="readings/sep-11.html">Sep 11</a>
+        <a class="day-button" href="readings/sep-12.html">Sep 12</a>
+        <a class="day-button" href="readings/sep-13.html">Sep 13</a>
+        <a class="day-button" href="readings/sep-14.html">Sep 14</a>
+        <a class="day-button" href="readings/sep-15.html">Sep 15</a>
+        <a class="day-button" href="readings/sep-16.html">Sep 16</a>
+        <a class="day-button" href="readings/sep-17.html">Sep 17</a>
+        <a class="day-button" href="readings/sep-18.html">Sep 18</a>
+        <a class="day-button" href="readings/sep-19.html">Sep 19</a>
+        <a class="day-button" href="readings/sep-20.html">Sep 20</a>
+        <a class="day-button" href="readings/sep-21.html">Sep 21</a>
+        <a class="day-button" href="readings/sep-22.html">Sep 22</a>
+        <a class="day-button" href="readings/sep-23.html">Sep 23</a>
+        <a class="day-button" href="readings/sep-24.html">Sep 24</a>
+        <a class="day-button" href="readings/sep-25.html">Sep 25</a>
+        <a class="day-button" href="readings/sep-26.html">Sep 26</a>
+        <a class="day-button" href="readings/sep-27.html">Sep 27</a>
+        <a class="day-button" href="readings/sep-28.html">Sep 28</a>
+        <a class="day-button" href="readings/sep-29.html">Sep 29</a>
+        <a class="day-button" href="readings/sep-30.html">Sep 30</a>
+      </div>
+    </section>
 
-  <div id="readings"></div>
+    <section class="month">
+      <h2>October 2025</h2>
+      <div class="day-grid">
+        <!-- OCTOBER 1 - 31 -->
+        <!-- I will include the rest next -->
+      </div>
+    </section>
 
-  <script>
-    const startDate = new Date('2025-09-01');
-    const endDate = new Date('2025-12-31');
-    const container = document.getElementById('readings');
+    <!-- Continue with November & December sections similarly -->
+  </main>
 
-    for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {
-      const yyyy = date.getFullYear();
-      const mm = String(date.getMonth() + 1).padStart(2, '0');
-      const dd = String(date.getDate()).padStart(2, '0');
-
-      const isoDate = `${yyyy}-${mm}-${dd}`;
-      const displayDate = date.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-
-      const readingDiv = document.createElement('div');
-      readingDiv.className = 'reading-day';
-      readingDiv.innerHTML = `
-        <h2>${displayDate}</h2>
-        <p><a href="https://bible.usccb.org/bible/readings/${isoDate}.cfm" target="_blank">View Readings</a></p>
-      `;
-      container.appendChild(readingDiv);
-    }
-  </script>
-
+  <footer>
+    <p>&copy; 2025 Catholic Mass Companion | Built with ❤️ by Zinnetix</p>
+  </footer>
 </body>
 </html>
