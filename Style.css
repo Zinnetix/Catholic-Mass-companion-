@@ -1,59 +1,53 @@
-/* Colors: Soft green (#075e54), gold (#fbc02d), white */
 body {
   font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdfa;
+  color: #333;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #333;
 }
 
 header {
-  background-color: #075e54;
-  color: white;
-  padding: 2rem;
   text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
+  background-color: #00574B;
+  color: white;
+  padding: 20px;
 }
 
 main {
-  padding: 2rem;
+  padding: 20px;
 }
 
-.card-container {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  max-width: 600px;
-  margin: 0 auto;
+.month {
+  margin-top: 30px;
 }
 
-.card {
-  background-color: #fbc02d;
-  color: #075e54;
+.month h2 {
+  color: #00574B;
+  margin-bottom: 10px;
+}
+
+.day-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.day-button {
   text-decoration: none;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #75B79E;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.card h2 {
-  margin-top: 0;
+.day-button:hover {
+  background-color: #4C9A82;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #075e54;
-  color: white;
-  font-size: 0.9rem;
+  font-size: 14px;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
