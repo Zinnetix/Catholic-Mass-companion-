@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About - Catholic Mass Companion</title>
-  <style>
+  <link rel="stylesheet" href="style.css">
     body {
       font-family: Arial, sans-serif;
       margin: 2rem;
