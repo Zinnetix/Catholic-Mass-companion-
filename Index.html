@@ -4,35 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catholic Mass Companion</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #075e54;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .month-section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    .day-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .day-buttons a {
+      background-color: #ffffff;
+      color: #075e54;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .day-buttons a:hover {
+      background-color: #dddddd;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Catholic Mass Companion</h1>
-    <p>Your spiritual guide for daily Mass readings, audio Bible, and reflections.</p>
-  </header>
 
-  <main>
-    <div class="card-container">
-      <a href="readings.html" class="card">
-        <h2>Daily Mass Readings</h2>
-        <p>Click here to read or listen to the Mass of the day.</p>
-      </a>
+  <h1>Catholic Mass Readings</h1>
 
-      <a href="audio.html" class="card">
-        <h2>Audio Bible</h2>
-        <p>Listen to your favorite scriptures on the go.</p>
-      </a>
-
-      <a href="https://www.vatican.va/archive/ENG0839/_INDEX.HTM" class="card" target="_blank">
-        <h2>Missal Archive</h2>
-        <p>Explore official Catholic liturgical texts.</p>
-      </a>
+  <!-- September -->
+  <div class="month-section">
+    <h2>September 2025</h2>
+    <div class="day-buttons">
+      <!-- Sept 1 to 30 -->
+      ${[...Array(30).keys()].map(i => {
+        const day = i + 1;
+        const dayStr = day < 10 ? '0' + day : day;
+        return `<a href="https://bible.usccb.org/bible/readings/2025-09-${dayStr}.cfm" target="_blank">Sept ${day}</a>`;
+      }).join('')}
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Catholic Mass Companion | Zinnetix Studio</p>
-  </footer>
+  <!-- October -->
+  <div class="month-section">
+    <h2>October 2025</h2>
+    <div class="day-buttons">
+      ${[...Array(31).keys()].map(i => {
+        const day = i + 1;
+        const dayStr = day < 10 ? '0' + day : day;
+        return `<a href="https://bible.usccb.org/bible/readings/2025-10-${dayStr}.cfm" target="_blank">Oct ${day}</a>`;
+      }).join('')}
+    </div>
+  </div>
+
+  <!-- November -->
+  <div class="month-section">
+    <h2>November 2025</h2>
+    <div class="day-buttons">
+      ${[...Array(30).keys()].map(i => {
+        const day = i + 1;
+        const dayStr = day < 10 ? '0' + day : day;
+        return `<a href="https://bible.usccb.org/bible/readings/2025-11-${dayStr}.cfm" target="_blank">Nov ${day}</a>`;
+      }).join('')}
+    </div>
+  </div>
+
+  <!-- December -->
+  <div class="month-section">
+    <h2>December 2025</h2>
+    <div class="day-buttons">
+      ${[...Array(31).keys()].map(i => {
+        const day = i + 1;
+        const dayStr = day < 10 ? '0' + day : day;
+        return `<a href="https://bible.usccb.org/bible/readings/2025-12-${dayStr}.cfm" target="_blank">Dec ${day}</a>`;
+      }).join('')}
+    </div>
+  </div>
+
 </body>
 </html>
