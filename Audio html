@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audio Daily Mass Readings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #075e54;
+    }
+    .day {
+      margin: 15px 0;
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #075e54;
+    }
+    audio {
+      width: 100%;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>Audio Daily Mass Readings</h1>
+
+  <div id="audio-list"></div>
+
+  <script>
+    const startDate = new Date('2025-09-01');
+    const endDate = new Date('2025-12-31');
+    const audioList = document.getElementById('audio-list');
+
+    for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {
+      const yyyy = date.getFullYear();
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const dd = String(date.getDate()).padStart(2, '0');
+
+      const formattedDate = `${yyyy}-${mm}-${dd}`;
+      const displayDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      const dayDiv = document.createElement('div');
+      dayDiv.className = 'day';
+      dayDiv.innerHTML = `
+        <h2>${displayDate}</h2>
+        <audio controls>
+          <source src="https://your-audio-hosting-link.com/audio/${formattedDate}.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      `;
+      audioList.appendChild(dayDiv);
+    }
+  </script>
+
+</body>
+</html>
